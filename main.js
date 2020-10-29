@@ -7,8 +7,6 @@ const path = require("path");
  * py process
  *************************************************************/
 
-//const PY_DIST_FOLDER = "pysumdist";
-//const PY_FOLDER = "pysum";
 const PY_DIST_FOLDER = "pysumdist";
 const PY_FOLDER = "pysum";
 const PY_MODULE = "api"; // without .py suffix
@@ -16,12 +14,20 @@ const PY_MODULE = "api"; // without .py suffix
 let pyProc = null;
 let pyPort = null;
 
-/* const guessPackaged = () => {
+const selectPort = () => {
+  pyPort = 4242;
+  return pyPort;
+};
+
+/*************************************************************
+ * Code for the packaged app
+ *************************************************************/
+ const guessPackaged = () => {
   const fullPath = path.join(__dirname, PY_DIST_FOLDER);
   return require("fs").existsSync(fullPath);
-}; */
+};
 
-/* const getScriptPath = () => {
+ const getScriptPath = () => {
   if (!guessPackaged()) {
     return path.join(__dirname, PY_FOLDER, PY_MODULE + ".py");
   }
@@ -29,14 +35,10 @@ let pyPort = null;
     return path.join(__dirname, PY_DIST_FOLDER, PY_MODULE, PY_MODULE + ".exe");
   }
   return path.join(__dirname, PY_DIST_FOLDER, PY_MODULE, PY_MODULE);
-}; */
+}; 
 
-const selectPort = () => {
-  pyPort = 4242;
-  return pyPort;
-};
 
-/* const createPyProc = () => {
+ const createPyProc = () => {
   let script = getScriptPath();
   let port = "" + selectPort();
 
@@ -51,8 +53,9 @@ const selectPort = () => {
     console.log("child process success on port " + port);
   }
 };
- */
-
+ 
+/*
+// code for standalone app. Testing only
 const createPyProc = () => {
   let port = "" + selectPort();
   let script = path.join(__dirname, "pysum", "api.py");
@@ -61,6 +64,7 @@ const createPyProc = () => {
     console.log("child process success");
   }
 };
+*/
 
 const exitPyProc = () => {
   pyProc.kill();
