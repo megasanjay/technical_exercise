@@ -9,8 +9,8 @@ const path = require("path");
 
 //const PY_DIST_FOLDER = "pysumdist";
 //const PY_FOLDER = "pysum";
-const PY_DIST_FOLDER = "pycalcdist";
-const PY_FOLDER = "pycalc";
+const PY_DIST_FOLDER = "pysumdist";
+const PY_FOLDER = "pysum";
 const PY_MODULE = "api"; // without .py suffix
 
 let pyProc = null;
@@ -55,7 +55,7 @@ const selectPort = () => {
 
 const createPyProc = () => {
   let port = "" + selectPort();
-  let script = path.join(__dirname, "pycalc", "api.py");
+  let script = path.join(__dirname, "pysum", "api.py");
   pyProc = require("child_process").spawn("python", [script, port]);
   if (pyProc != null) {
     console.log("child process success");
