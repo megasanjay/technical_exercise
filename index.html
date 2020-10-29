@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Technical Exercise</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+      <!-- Using bootstrap for css simplicity -->
+    />
+    <style>
+      div.cn {
+        display: flex;
+        width: 100vh;
+        height: 100vh;
+        vertical-align: middle;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+      }
+      div.inner {
+        justify-content: center;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body style="height: 100%; background-color: rgb(236, 236, 236)">
+    <div class="cn">
+      <div class="inner">
+        <h2>Calculate the sum of two numbers!</h2>
+        <p>
+          This calculator supports all numbers. You can try integers, decimals
+          and negative numbers.
+        </p>
+        <br />
+        <div class="form-group row d-flex justify-content-center">
+          <label for="input1" class="col-form-label">Num 1: </label>
+          <div class="col-sm-6">
+            <input type="text" value="1" class="form-control" id="input1" />
+          </div>
+        </div>
+        <div class="form-group row d-flex justify-content-center">
+          <label for="input2" class="col-form-label">Num 2: </label>
+          <div class="col-sm-6">
+            <input type="text" value="2" class="form-control" id="input2" />
+          </div>
+        </div>
+        <button id="calculateSum" class="btn btn-primary">Calculate Sum</button>
+        <br />
+        <div style="height: 2em;"></div>
+        <div class="input-group mb-3 inner" style="width: 300px;">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Result: </span>
+          </div>
+          <input type="text" id="result" class="form-control" readonly />
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    require("./renderer.js");
+  </script>
+</html>
