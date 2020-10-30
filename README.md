@@ -151,8 +151,8 @@ run [`electron-packager`](https://github.com/electron-userland/electron-packager
 
 ```bash
 .\node_modules\.bin\electron-packager . --overwrite --ignore="pysum$" --ignore="\.venv" --prune=true --out=release-builds --version-string.ProductName="Technical Exercise"
-##ackaging app for platform win32 x64 using electron v1.8.8
-##Wrote new app to release-builds\technical-exercise-win32-x64
+## Packaging app for platform win32 x64 using electron v1.8.8
+## Wrote new app to release-builds\technical-exercise-win32-x64
 ```
 
 You should be able to now move the generated folder to anywhere on your file system and run it. It does generate a large file (around 240MB in my case) but 7zip was able to bring it to about 70MB
