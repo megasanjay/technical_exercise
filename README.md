@@ -161,6 +161,6 @@ You should be able to now move the generated folder to anywhere on your file sys
 
 The packaged apps can be found in the [`release-builds`](https://github.com/megasanjay/technical_exercise/tree/master/release-builds) folder. I used 7zip to compress the folders so you can use it to uncompress the archives.
 
--7zip for Windows: [https://www.7-zip.org/](https://www.7-zip.org/)
--p7zip for macOS and Linux: [https://sourceforge.net/projects/p7zip/](https://sourceforge.net/projects/p7zip/)
--Keka for macOS: [https://www.keka.io/en/](https://www.keka.io/en/)
+- 7zip for Windows: [https://www.7-zip.org/](https://www.7-zip.org/)
+- p7zip for macOS and Linux: [https://sourceforge.net/projects/p7zip/](https://sourceforge.net/projects/p7zip/)
+- Keka for macOS: [https://www.keka.io/en/](https://www.keka.io/en/)
