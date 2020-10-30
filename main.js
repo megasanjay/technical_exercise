@@ -22,12 +22,12 @@ const selectPort = () => {
 /*************************************************************
  * Code for the packaged app
  *************************************************************/
- const guessPackaged = () => {
+const guessPackaged = () => {
   const fullPath = path.join(__dirname, PY_DIST_FOLDER);
   return require("fs").existsSync(fullPath);
 };
 
- const getScriptPath = () => {
+const getScriptPath = () => {
   if (!guessPackaged()) {
     return path.join(__dirname, PY_FOLDER, PY_MODULE + ".py");
   }
@@ -35,10 +35,9 @@ const selectPort = () => {
     return path.join(__dirname, PY_DIST_FOLDER, PY_MODULE, PY_MODULE + ".exe");
   }
   return path.join(__dirname, PY_DIST_FOLDER, PY_MODULE, PY_MODULE);
-}; 
+};
 
-
- const createPyProc = () => {
+const createPyProc = () => {
   let script = getScriptPath();
   let port = "" + selectPort();
 
@@ -53,7 +52,7 @@ const selectPort = () => {
     console.log("child process success on port " + port);
   }
 };
- 
+
 /*
 // code for standalone app. Testing only
 const createPyProc = () => {
@@ -86,6 +85,9 @@ const createWindow = () => {
     width: 800,
     height: 600,
     backgroundColor: "rgb(236, 236, 236)",
+    webPreferences: {
+      nodeIntegration: true,
+    },
   });
   mainWindow.loadURL(
     require("url").format({

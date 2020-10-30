@@ -67,4 +67,3 @@ calculateSum.addEventListener("click", () => {
     }
   });
 });
-
