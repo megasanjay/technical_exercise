@@ -147,7 +147,7 @@ If everything goes well, the `pysumdist/api/` folder should show up, as well as 
 
 #### electron-packager
 
-run [`electron-packager`](https://github.com/electron-userland/electron-packager) to generate the bundled application. We also want to exclude some folders (For example, `pycalc/` is no longer needed to be bundled). The name, platform, and arch are inferred from `package.json`. For more options, check out the docs.
+run [`electron-packager`](https://github.com/electron-userland/electron-packager) to generate the bundled application. We also want to exclude some folders (For example, `pysum/` is no longer needed to be bundled). The name, platform, and arch are inferred from [`package.json`](https://github.com/megasanjay/technical_exercise/blob/master/package.json). For more options, check out the docs.
 
 ```bash
 .\node_modules\.bin\electron-packager . --overwrite --ignore="pysum$" --ignore="\.venv" --prune=true --out=release-builds --version-string.ProductName="Technical Exercise"
