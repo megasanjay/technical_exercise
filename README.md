@@ -3,7 +3,7 @@
 The original project can be found here : [GitHub repo](https://github.com/fyears/electron-python-example). In depth details can be found in the original repo but I have updated packages for later versions of electron. An extensive summary can be found below.
 
 ## Description
-This repository conatains the source code for the technical exercise. The electron app showcased here takes in two numbers and returns the sum of the two numbers. 
+This repository contains the source code for the technical exercise. The electron app showcased here takes in two numbers and returns the sum of the two numbers. 
 
 ### Setup
 We need the python application, `python`, `pip`, `node`, `npm`, available in command line. For using `zerorpc`, we also need the C/C++ compilers (`cc` and `c++` in the command line, and/or MSVC on Windows).
