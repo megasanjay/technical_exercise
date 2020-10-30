@@ -23,6 +23,7 @@ let validateInput = (input) => {
 };
 
 // disable button if any of the inputs are invalid
+// button should be disable for invalid input
 let buttonDisableCheck = () => {
   validity = document.getElementsByClassName("is-invalid");
   if (validity.length > 0) {
@@ -33,6 +34,7 @@ let buttonDisableCheck = () => {
 };
 
 // check validity of input as when the user types
+// button should be disable for invalid input
 input1.addEventListener("input", (evt) => {
   if (!validateInput(input1.value)) {
     console.log("invalid");

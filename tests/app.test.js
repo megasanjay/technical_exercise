@@ -12,19 +12,24 @@ if (process.platform === "win32") {
   //electronPath += '.cmd';
 }
 
-jest.setTimeout(10000);
+jest.setTimeout(10000); // Added a longer timeout to allow the app to start
 
+// start app for testing
 beforeAll(() => {
   return app.start();
   console.log("app started");
 }, 25000);
 
+// close app after testing is complete
 afterAll(() => {
   if (app && app.isRunning()) {
     return app.stop();
   }
 });
 
+/*
+    Check if app opens with the right number of windows.
+*/
 test("App Init", async () => {
   let isVisible = await app.browserWindow.isVisible();
   expect(isVisible).toBe(true);
@@ -35,11 +40,15 @@ test("Displays App window", async () => {
   expect(count).toEqual(1);
 });
 
+// Test app title
 test("Displays Title", async () => {
   const title = await app.client.waitUntilWindowLoaded().getTitle();
   expect(title).toEqual("Technical Exercise");
 });
 
+/*
+    check for the input fields and button to be rendered. 
+*/
 test("Has an input for the first number", async () => {
   const labelText = await app.client.getText('label[for="input1"]');
   expect(labelText).toEqual("Num 1:");
@@ -61,6 +70,7 @@ test("Button rendered", async () => {
   expect(inputbox.value).not.toEqual(null);
 });
 
+// Test valid inputs for correctness. Using arrays for cleanliness
 test("Valid input", async () => {
   var inputs = [
     [1, 4, "5"],
@@ -72,9 +82,10 @@ test("Valid input", async () => {
     [-2, 7, "5"],
     [1.5, 3, "4.5"],
     [-2, 5.67, "3.67"],
-    [32.46194, -159.259, "-126.79706"],
+    [32.46194, -159.259, "-126.79706"]
   ];
 
+  // run through all test cases
   for (i = 0; i < inputs.length; i++) {
     let test_input = inputs[i];
 
@@ -100,9 +111,10 @@ test("Invalid input", async () => {
     ["3.56.4", 6],
     ["-.7", 5],
     ["-2", "6$"],
-    ["1.5-7", 3],
+    ["1.5-7", 3]
   ];
 
+  // run through all test cases
   for (i = 0; i < inputs.length; i++) {
     let test_input = inputs[i];
 
@@ -113,4 +125,3 @@ test("Invalid input", async () => {
     expect(result).toEqual(false);
   }
 });
-

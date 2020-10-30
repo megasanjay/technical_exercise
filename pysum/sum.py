@@ -18,6 +18,7 @@ def sum(input_obj):
     # find the maximum precision for output format
     precision = max(precision_counter(input1), precision_counter(input2))
 
+    # using float to account for decimal numbers
     result = float(obj_dict["input1"]) + float(obj_dict["input2"])
     
     # return output with correct precision
