@@ -33,7 +33,6 @@ let buttonDisableCheck = () => {
 };
 
 // check validity of input as when the user types
-// button should be disable for invalid input
 input1.addEventListener("input", (evt) => {
   if (!validateInput(input1.value)) {
     console.log("invalid");
@@ -45,7 +44,6 @@ input1.addEventListener("input", (evt) => {
 });
 
 // check validity of input as when the user types
-// button should be disable for invalid input
 input2.addEventListener("input", (evt) => {
   if (!validateInput(input2.value)) {
     console.log("invalid");
@@ -56,8 +54,8 @@ input2.addEventListener("input", (evt) => {
   buttonDisableCheck();
 });
 
-// take both numbers and package into a JSON object.
-// Using JSON allows for expandability is needed.
+// take both numbers and package into a JSON object. 
+// Using JSON allows for expandability is needed. 
 calculateSum.addEventListener("click", () => {
   json_string = `{"input1": ${input1.value}, "input2": ${input2.value}}`;
   //console.log(json_string);
