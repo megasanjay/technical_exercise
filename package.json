@@ -1,21 +1,21 @@
 {
-  "name": "pretty-calculator",
+  "name": "technical-exercise",
   "version": "1.0.0",
-  "description": "A minimal Electron and Python - based calculator ",
+  "description": "Technical Exercise",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "watch": "nodemon --exec electron .",
     "test": "jest --detectOpenHandles"
   },
-  "repository": "https://github.com/fyears/electron-python-example",
+  "repository": "https://github.com/megasanjay/technical_exercise",
   "keywords": [
     "Electron",
     "Python",
     "zerorpc",
     "demo"
   ],
-  "author": "fyears",
+  "author": "Sanjay Soundarajan",
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.5.3",
